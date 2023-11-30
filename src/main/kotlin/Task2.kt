@@ -6,7 +6,7 @@ fun main() {
     val saveCode = code
 
     println("Введите код")
-    val enterCode = readLine()!!.toInt()
+    val enterCode = readln().toInt()
 
     if (enterCode == saveCode) {
         println("Авторизация успешна")
