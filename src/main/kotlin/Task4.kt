@@ -1,30 +1,26 @@
 fun main() {
 
     val ingredients = arrayOf("текила", "апельсиновый сок", "сироп", "лед")
-    println(ingredients.contentToString())
+    println(ingredients)
 
     println("Какой ингредиент вы хотите заменить?")
-    val inputUser = readln()
+    val inputUser = readln().toLowerCase()
 
     for (i in ingredients) {
         if (i == inputUser) {
             println("Ингрединет ${inputUser} есть в Текила санрайз")
-            continue
+            val ingredientReplace = ingredients.indexOf(inputUser)
+
+            println("На какой ингредиент вы хотите изменить?")
+            val inputNewIngredient = readln()
+            ingredients[ingredientReplace] = inputNewIngredient
+
+            println("Вы сохранили список ингредиентов")
+            for (ingredient in ingredients) {
+                println(ingredient)
+            }
+            return
         }
     }
-
-    if(ingredients != inputUser){
-        println("Не найден")
-    }
-
-    val ingredientReplace = ingredients.indexOf(inputUser)
-
-    println("На какой ингредиент вы хотите изменить?")
-    val inputNewIngredient = readln()
-    ingredients[ingredientReplace] = inputNewIngredient
-
-    println("Вы сохранили список ингредиентов")
-    for (ingredient in ingredients) {
-        println(ingredient)
-    }
+    println("Ингредиент не найден")
 }
