@@ -5,6 +5,7 @@ fun main() {
         login = "Vladimir",
         password = "123456",
         mail = "vladimir@gmail.com",
+        bio = null
     )
 
     userOne.outputInformation()
