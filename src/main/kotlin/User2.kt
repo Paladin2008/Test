@@ -3,7 +3,7 @@ class User2(
     val login: String,
     var password: String,
     val mail: String,
-    var bio: String = "null"
+    var bio: String?
 ) {
 
     fun outputInformation() {
