@@ -1,24 +1,23 @@
-class weather(val daytimeTemperature: String, val nightTemperature: String, val precipitation: List<String>) {
+class Weather(val daytimeTemperature: String, val nightTemperature: String, val presencePrecipitation: Boolean) {
 
     fun weatherShow() {
         println("Дневная температура $daytimeTemperature")
         println("Ночная температура $nightTemperature")
-        println("Наличие осадков $precipitation")
+        println("Наличие осадков $presencePrecipitation")
     }
 }
 
 fun main() {
 
-    val firstDay = weather(
+    val firstDay = Weather(
         daytimeTemperature = "+40",
         nightTemperature = "-30",
-        precipitation = listOf("Днем кислотный дождь переменная облачность", "Ночью ясно"),
+        presencePrecipitation = true,
     ).weatherShow()
 
-    val secondDay = weather(
+    val secondDay = Weather(
         daytimeTemperature = "+20",
         nightTemperature = "0",
-        precipitation = listOf("Днем дождь", "Ночью облачно"),
+        presencePrecipitation = false,
     ).weatherShow()
-
 }
