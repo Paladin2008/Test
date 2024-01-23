@@ -6,28 +6,30 @@
 //В конструктор передается температура в Кельвинах. При обращении к полям с температурой возвращаются данные в Цельсиях.
 //Cоздай объект с произвольными данными и выведи в консоль методом созданного класса.
 
-class Weather() {
+class Weather(dayTimeTemperature: Int, nightTemperature: Int, presencePrecipitation: Boolean) {
 
-    var daytimeTemperature = 0
-    var nightTemperature = 0
-    var presencePrecipitation = false
+
+    var dayTimeTemperature = dayTimeTemperature
+    var nightTemperature = nightTemperature
+    var presencePrecipitation = presencePrecipitation
+
+
+    fun weatherShow() {
+        val conversionDayTime = dayTimeTemperature - 273
+        val conversionNightTime = nightTemperature - 273
+        println("Температура в Цельсиях $conversionDayTime")
+        println("Температура в Цельсиях $conversionNightTime")
+        when (presencePrecipitation) {
+            false -> println("Остадков нет")
+            else -> println("Осадки есть")
+        }
+    }
+
+
 }
 
 fun main() {
 
-    val firstDay = Weather()
-    firstDay.daytimeTemperature = 277
-    firstDay.nightTemperature = 274
-    firstDay.presencePrecipitation = true
-
-    val conversionOne = firstDay.daytimeTemperature - 273
-    val conversionTwo = firstDay.nightTemperature - 273
-
-    when(firstDay.presencePrecipitation) {
-        false -> println("Остадков нет")
-        else -> println("Осадки есть")
-    }
-
-    println("Температура в Цельсиях $conversionOne")
-    println("Температура в Цельсиях $conversionTwo")
+    val firstDay = Weather(277, 274, true)
+    firstDay.weatherShow()
 }
