@@ -6,23 +6,23 @@
 //- Номер: 89123456789
 //- Компания: Reddit
 //Вместо null значения, в консоль должна выводиться строка <не указано>.
-class phoneDirectory(
+class PhoneDirectory(
     val name: String,
     val phone: Long,
-    val company: String? = null,
+    var company: String? = null,
 ) {
 
-    fun personShow() {
-        println("Имя: $name \nНомер: $phone \nКомпания: $company")
+    fun printInfo() {
+        val checkCompany: String = company ?: "не указано"
+        println("Имя: $name \nНомер: $phone \nКомпания: $checkCompany")
     }
 }
 
 fun main() {
 
-    val person = phoneDirectory(
+    val person = PhoneDirectory(
         name = "Ростислав",
         phone = 89123456789,
-        company = "не указано"
     )
-    person.personShow()
+    person.printInfo()
 }
