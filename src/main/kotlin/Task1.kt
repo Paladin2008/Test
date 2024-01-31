@@ -2,7 +2,7 @@
 //Номер телефона – целочисленное значение (Long).
 //При создании объекта компания может оставаться незаполненной. Вместо пустой строки поле может принимать null.
 //Все свойства класса не должны иметь инициализации по умолчанию.
-class phoneDirectory(
+class PhoneDirectory(
     val name: String,
     val phone: Long,
     val company: String?,
@@ -10,7 +10,7 @@ class phoneDirectory(
 
 fun main() {
 
-    val person = phoneDirectory(
+    val person = PhoneDirectory(
         name = "Vladimir",
         phone = 89174888888,
         company = null
