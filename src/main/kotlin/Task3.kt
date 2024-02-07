@@ -20,9 +20,6 @@ fun main() {
         PhoneDirectory(name = "Никита", phone = 89178324444, company = "null"),
     )
 
-    val newList = listPersons.map {
-        it.company
-    }
-
-    newList.forEach{ println(it)}
+    val newList = listPersons.mapNotNull { it.company }
+    println(newList)
 }
